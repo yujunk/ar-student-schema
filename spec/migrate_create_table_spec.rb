@@ -8,7 +8,7 @@ describe "create table with correct schema" do
   end
 
   it "should have a Students table" do
-    ActiveRecord::Base.connection.table_exists?(:students).should be_true
+    expect(ActiveRecord::Base.connection.table_exists?(:students)).to eq(true)
   end
 
   it "should have the right columns and types" do
@@ -19,8 +19,9 @@ describe "create table with correct schema" do
       :datetime => ["created_at", "updated_at"]
     }
 
+
     ActiveRecord::Base.connection.columns(:students).each do |col|
-      expected[col.type].include?(col.name).should be_true
+      expect(expected[col.type].include?(col.name)).to eq(true)
     end
   end
 end
