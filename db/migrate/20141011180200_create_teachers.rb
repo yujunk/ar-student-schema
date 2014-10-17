@@ -6,7 +6,6 @@ class CreateTeachers < ActiveRecord::Migration
   def change
     # HINT: checkout ActiveRecord::Migration.create_table
     create_table :teachers do |t|
-      # t.integer :id
       t.string :first_name
       t.string :last_name
       t.string :email
