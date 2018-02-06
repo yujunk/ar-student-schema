@@ -1,0 +1,424 @@
+Last login: Fri Feb  2 12:58:29 on ttys000
+JUNs-MacBook-Pro:~ yujunk$ sqlite3
+SQLite version 3.19.3 2017-06-27 16:48:08
+Enter ".help" for usage hints.
+Connected to a transient in-memory database.
+Use ".open FILENAME" to reopen on a persistent database.
+sqlite> ^D
+JUNs-MacBook-Pro:~ yujunk$ cd desktop
+JUNs-MacBook-Pro:desktop yujunk$ ls
+Screen Shot 2018-01-13 at 5.06.33 PM.png
+Screen Shot 2018-02-03 at 1.38.59 PM.png
+Screen Shot 2018-02-03 at 1.51.14 PM.png
+Screen Shot 2018-02-03 at 1.55.32 PM.png
+Screen Shot 2018-02-03 at 3.37.31 PM.png
+Terminal.app
+ar-student-schema
+~$Strengths & Weaknesses.xlsx
+JUNs-MacBook-Pro:desktop yujunk$ cd ar-student-schema
+JUNs-MacBook-Pro:ar-student-schema yujunk$ app
+-bash: app: command not found
+JUNs-MacBook-Pro:ar-student-schema yujunk$ cd app
+JUNs-MacBook-Pro:app yujunk$ cd models
+JUNs-MacBook-Pro:models yujunk$ irb -r ./teacher.rb
+irb(main):001:0> ^D
+JUNs-MacBook-Pro:models yujunk$ irb - r /.teacher.rb
+Traceback (most recent call last):
+	3: from /Users/yujunk/.rbenv/versions/2.5.0/bin/irb:11:in `<main>'
+	2: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb.rb:376:in `start'
+	1: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb/init.rb:19:in `setup'
+/Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb/init.rb:210:in `parse_opts': Unrecognized switch: - (IRB::UnrecognizedSwitch)
+JUNs-MacBook-Pro:models yujunk$ irb -r ./teacher.rb
+irb(main):001:0> teacher = Teacher.new(first_name: "Albus", last_name: "Dumbledore", email: "albus.dumbledore@gmail.com")
+=> #<Teacher id: nil, first_name: "Albus", last_name: "Dumbledore", email: "albus.dumbledore@gmail.com", phone_number: nil, birthday: nil, created_at: nil, updated_at: nil>
+irb(main):002:0> teacher = Teacher.new(first_name: "Albus", last_name: "Dumbledore", email: "albus.dumbledore@gmail.com")
+=> #<Teacher id: nil, first_name: "Albus", last_name: "Dumbledore", email: "albus.dumbledore@gmail.com", phone_number: nil, birthday: nil, created_at: nil, updated_at: nil>
+irb(main):003:0> teacher.save
+=> true
+irb(main):004:0> teacher = Teacher.create(first_name: "Flitwick", last_name: "Something", email: "flitcwick.something@gmail.com")
+=> #<Teacher id: 2, first_name: "Flitwick", last_name: "Something", email: "flitcwick.something@gmail.com", phone_number: nil, birthday: nil, created_at: "2018-02-05 07:06:25", updated_at: "2018-02-05 07:06:25">
+irb(main):005:0> teacher = Teacher.create(first_name: "Flitwick", last_name: "Something", email: "flitcwick.something@gmail.com")
+=> #<Teacher id: 3, first_name: "Flitwick", last_name: "Something", email: "flitcwick.something@gmail.com", phone_number: nil, birthday: nil, created_at: "2018-02-05 07:06:37", updated_at: "2018-02-05 07:06:37">
+irb(main):006:0> teacher = Teacher.create(first_name: "Flitwick", last_name: "Something", email: "flitcwick.something@gmail.com")
+=> #<Teacher id: 4, first_name: "Flitwick", last_name: "Something", email: "flitcwick.something@gmail.com", phone_number: nil, birthday: nil, created_at: "2018-02-05 07:06:38", updated_at: "2018-02-05 07:06:38">
+irb(main):007:0> teacher = Teacher.create(first_name: "Flitwick", last_name: "Something", email: "flitcwick.something@gmail.com")
+=> #<Teacher id: 5, first_name: "Flitwick", last_name: "Something", email: "flitcwick.something@gmail.com", phone_number: nil, birthday: nil, created_at: "2018-02-05 07:06:39", updated_at: "2018-02-05 07:06:39">
+irb(main):008:0> teacher = Teacher.create(first_name: "Flitwick", last_name: "Something", email: "flitcwick.something@gmail.com")
+=> #<Teacher id: 6, first_name: "Flitwick", last_name: "Something", email: "flitcwick.something@gmail.com", phone_number: nil, birthday: nil, created_at: "2018-02-05 07:06:46", updated_at: "2018-02-05 07:06:46">
+irb(main):009:0> ^D
+JUNs-MacBook-Pro:models yujunk$ cd desktop
+-bash: cd: desktop: No such file or directory
+JUNs-MacBook-Pro:models yujunk$ cd~
+-bash: cd~: command not found
+JUNs-MacBook-Pro:models yujunk$ cd ~
+JUNs-MacBook-Pro:~ yujunk$ cd desktop
+JUNs-MacBook-Pro:desktop yujunk$ ls
+Screen Shot 2018-01-13 at 5.06.33 PM.png
+Screen Shot 2018-02-03 at 1.38.59 PM.png
+Screen Shot 2018-02-03 at 1.51.14 PM.png
+Screen Shot 2018-02-03 at 1.55.32 PM.png
+Screen Shot 2018-02-03 at 3.37.31 PM.png
+Terminal.app
+ar-student-schema
+~$Strengths & Weaknesses.xlsx
+JUNs-MacBook-Pro:desktop yujunk$ cd ar-student-schema
+JUNs-MacBook-Pro:ar-student-schema yujunk$ rake db:migrate
+"Harry Potter"
+21
+false
+false
+false
+false
+false
+false
+== 20180205151500 CreateStudentForeignKey: migrating ==========================
+-- add_foreign_key(:students, :teachers)
+   -> 0.0000s
+== 20180205151500 CreateStudentForeignKey: migrated (0.0002s) =================
+
+rake aborted!
+StandardError: An error has occurred, this and all later migrations canceled:
+
+SQLite3::BusyException: database is locked: INSERT INTO "schema_migrations" ("version") VALUES (?)
+/Users/yujunk/Desktop/ar-student-schema/Rakefile:20:in `block in <top (required)>'
+
+Caused by:
+ActiveRecord::StatementInvalid: SQLite3::BusyException: database is locked: INSERT INTO "schema_migrations" ("version") VALUES (?)
+/Users/yujunk/Desktop/ar-student-schema/Rakefile:20:in `block in <top (required)>'
+
+Caused by:
+SQLite3::BusyException: database is locked
+/Users/yujunk/Desktop/ar-student-schema/Rakefile:20:in `block in <top (required)>'
+Tasks: TOP => db:migrate
+(See full trace by running task with --trace)
+JUNs-MacBook-Pro:ar-student-schema yujunk$ rake db:migrate
+"Harry Potter"
+21
+false
+false
+false
+false
+false
+false
+== 20180205151500 CreateStudentForeignKey: migrating ==========================
+-- add_foreign_key(:students, :teachers)
+   -> 0.0001s
+== 20180205151500 CreateStudentForeignKey: migrated (0.0002s) =================
+
+JUNs-MacBook-Pro:ar-student-schema yujunk$ irb 'load student.rb'
+Traceback (most recent call last):
+	10: from /Users/yujunk/.rbenv/versions/2.5.0/bin/irb:11:in `<main>'
+	 9: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb.rb:379:in `start'
+	 8: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb.rb:379:in `new'
+	 7: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb.rb:410:in `initialize'
+	 6: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb.rb:410:in `new'
+	 5: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb/context.rb:85:in `initialize'
+	 4: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb/context.rb:85:in `new'
+	 3: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb/input-method.rb:101:in `initialize'
+	 2: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb/magic-file.rb:8:in `open'
+	 1: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb/magic-file.rb:8:in `open'
+/Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb/magic-file.rb:8:in `initialize': No such file or directory @ rb_sysopen - load student.rb (Errno::ENOENT)
+JUNs-MacBook-Pro:ar-student-schema yujunk$ irb 'load ./app/models/student.rb'
+Traceback (most recent call last):
+	10: from /Users/yujunk/.rbenv/versions/2.5.0/bin/irb:11:in `<main>'
+	 9: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb.rb:379:in `start'
+	 8: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb.rb:379:in `new'
+	 7: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb.rb:410:in `initialize'
+	 6: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb.rb:410:in `new'
+	 5: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb/context.rb:85:in `initialize'
+	 4: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb/context.rb:85:in `new'
+	 3: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb/input-method.rb:101:in `initialize'
+	 2: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb/magic-file.rb:8:in `open'
+	 1: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb/magic-file.rb:8:in `open'
+/Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb/magic-file.rb:8:in `initialize': No such file or directory @ rb_sysopen - load ./app/models/student.rb (Errno::ENOENT)
+JUNs-MacBook-Pro:ar-student-schema yujunk$ irb 'load ./app/models'
+Traceback (most recent call last):
+	10: from /Users/yujunk/.rbenv/versions/2.5.0/bin/irb:11:in `<main>'
+	 9: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb.rb:379:in `start'
+	 8: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb.rb:379:in `new'
+	 7: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb.rb:410:in `initialize'
+	 6: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb.rb:410:in `new'
+	 5: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb/context.rb:85:in `initialize'
+	 4: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb/context.rb:85:in `new'
+	 3: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb/input-method.rb:101:in `initialize'
+	 2: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb/magic-file.rb:8:in `open'
+	 1: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb/magic-file.rb:8:in `open'
+/Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb/magic-file.rb:8:in `initialize': No such file or directory @ rb_sysopen - load ./app/models (Errno::ENOENT)
+JUNs-MacBook-Pro:ar-student-schema yujunk$ ls
+Gemfile
+README.md
+Rakefile
+Rakefile_Original_last_deleted_extracode
+app
+db
+lib
+spec
+JUNs-MacBook-Pro:ar-student-schema yujunk$ irb 'load app/models'
+Traceback (most recent call last):
+	10: from /Users/yujunk/.rbenv/versions/2.5.0/bin/irb:11:in `<main>'
+	 9: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb.rb:379:in `start'
+	 8: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb.rb:379:in `new'
+	 7: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb.rb:410:in `initialize'
+	 6: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb.rb:410:in `new'
+	 5: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb/context.rb:85:in `initialize'
+	 4: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb/context.rb:85:in `new'
+	 3: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb/input-method.rb:101:in `initialize'
+	 2: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb/magic-file.rb:8:in `open'
+	 1: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb/magic-file.rb:8:in `open'
+/Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb/magic-file.rb:8:in `initialize': No such file or directory @ rb_sysopen - load app/models (Errno::ENOENT)
+JUNs-MacBook-Pro:ar-student-schema yujunk$ irb
+irb(main):001:0> load './app/models/student.rb'
+"Harry Potter"
+21
+false
+false
+false
+false
+false
+false
+=> true
+irb(main):002:0> load './app/models'
+Traceback (most recent call last):
+        6: from /Users/yujunk/.rbenv/versions/2.5.0/bin/irb:11:in `<main>'
+        5: from (irb):2
+        4: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activesupport-5.1.4/lib/active_support/dependencies.rb:286:in `load'
+        3: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activesupport-5.1.4/lib/active_support/dependencies.rb:258:in `load_dependency'
+        2: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activesupport-5.1.4/lib/active_support/dependencies.rb:286:in `block in load'
+        1: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activesupport-5.1.4/lib/active_support/dependencies.rb:286:in `load'
+LoadError (cannot load such file -- ./app/models)
+irb(main):003:0> quit
+JUNs-MacBook-Pro:ar-student-schema yujunk$ irb 'load ./db/config.rb'
+Traceback (most recent call last):
+	10: from /Users/yujunk/.rbenv/versions/2.5.0/bin/irb:11:in `<main>'
+	 9: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb.rb:379:in `start'
+	 8: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb.rb:379:in `new'
+	 7: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb.rb:410:in `initialize'
+	 6: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb.rb:410:in `new'
+	 5: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb/context.rb:85:in `initialize'
+	 4: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb/context.rb:85:in `new'
+	 3: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb/input-method.rb:101:in `initialize'
+	 2: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb/magic-file.rb:8:in `open'
+	 1: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb/magic-file.rb:8:in `open'
+/Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/2.5.0/irb/magic-file.rb:8:in `initialize': No such file or directory @ rb_sysopen - load ./db/config.rb (Errno::ENOENT)
+JUNs-MacBook-Pro:ar-student-schema yujunk$ irb
+irb(main):001:0> load './db/config.rb'
+"Harry Potter"
+21
+false
+false
+false
+false
+false
+false
+=> true
+irb(main):002:0> Teacher.new
+=> #<Teacher id: nil, first_name: nil, last_name: nil, email: nil, phone_number: nil, birthday: nil, created_at: nil, updated_at: nil>
+irb(main):003:0> Student.new
+=> #<Student id: nil, created_at: nil, updated_at: nil, first_name: "0", last_name: "0", email: nil, phone_number: nil, birthday: nil, age: nil>
+irb(main):004:0> Student.all
+=> #<ActiveRecord::Relation [#<Student id: 1, created_at: "2018-02-02 07:21:28", updated_at: "2018-02-02 08:13:53", first_name: "Harry", last_name: "Potter", email: nil, phone_number: nil, birthday: 1997, age: 21>, #<Student id: 2, created_at: "2018-02-02 07:22:08", updated_at: "2018-02-02 08:14:42", first_name: "Harry", last_name: "Potter2", email: nil, phone_number: nil, birthday: 1999, age: 22>, #<Student id: 3, created_at: "2018-02-02 09:24:32", updated_at: "2018-02-02 09:24:32", first_name: "Luke", last_name: "Skywalker", email: "hello@address.com", phone_number: nil, birthday: 1999, age: nil>, #<Student id: 4, created_at: "2018-02-02 09:31:50", updated_at: "2018-02-02 09:31:50", first_name: "Luke", last_name: "Skywalker", email: "hi@address.com", phone_number: nil, birthday: 1999, age: nil>]>
+irb(main):005:0> ^D
+JUNs-MacBook-Pro:ar-student-schema yujunk$ rake db:migrate
+rake aborted!
+ActiveRecord::ConnectionNotEstablished: No connection pool with 'primary' found.
+/Users/yujunk/Desktop/ar-student-schema/app/models/student.rb:35:in `<top (required)>'
+/Users/yujunk/Desktop/ar-student-schema/db/config.rb:2:in `require_relative'
+/Users/yujunk/Desktop/ar-student-schema/db/config.rb:2:in `<top (required)>'
+/Users/yujunk/Desktop/ar-student-schema/Rakefile:2:in `require_relative'
+/Users/yujunk/Desktop/ar-student-schema/Rakefile:2:in `<top (required)>'
+(See full trace by running task with --trace)
+JUNs-MacBook-Pro:ar-student-schema yujunk$ rake db:migrate
+"Harry Potter"
+21
+false
+false
+false
+false
+false
+false
+JUNs-MacBook-Pro:ar-student-schema yujunk$ rake db:migrate
+"Harry Potter"
+21
+false
+false
+false
+false
+false
+false
+JUNs-MacBook-Pro:ar-student-schema yujunk$ irb
+irb(main):001:0> load './db/config.rb'
+"Harry Potter"
+21
+false
+false
+false
+false
+false
+false
+=> true
+irb(main):002:0> Student.all
+=> #<ActiveRecord::Relation [#<Student id: 1, created_at: "2018-02-02 07:21:28", updated_at: "2018-02-02 08:13:53", first_name: "Harry", last_name: "Potter", email: nil, phone_number: nil, birthday: 1997, age: 21>, #<Student id: 2, created_at: "2018-02-02 07:22:08", updated_at: "2018-02-02 08:14:42", first_name: "Harry", last_name: "Potter2", email: nil, phone_number: nil, birthday: 1999, age: 22>, #<Student id: 3, created_at: "2018-02-02 09:24:32", updated_at: "2018-02-02 09:24:32", first_name: "Luke", last_name: "Skywalker", email: "hello@address.com", phone_number: nil, birthday: 1999, age: nil>, #<Student id: 4, created_at: "2018-02-02 09:31:50", updated_at: "2018-02-02 09:31:50", first_name: "Luke", last_name: "Skywalker", email: "hi@address.com", phone_number: nil, birthday: 1999, age: nil>]>
+irb(main):003:0> Student.new
+=> #<Student id: nil, created_at: nil, updated_at: nil, first_name: "0", last_name: "0", email: nil, phone_number: nil, birthday: nil, age: nil>
+irb(main):004:0> Teacher.new
+=> #<Teacher id: nil, first_name: nil, last_name: nil, email: nil, phone_number: nil, birthday: nil, created_at: nil, updated_at: nil>
+irb(main):005:0> rake db:migrate
+Traceback (most recent call last):
+        2: from /Users/yujunk/.rbenv/versions/2.5.0/bin/irb:11:in `<main>'
+        1: from (irb):5
+NameError (undefined local variable or method `migrate' for main:Object)
+irb(main):006:0> ^D
+JUNs-MacBook-Pro:ar-student-schema yujunk$ rake db:migrate
+"Harry Potter"
+21
+false
+false
+false
+false
+false
+false
+rake aborted!
+NameError: uninitialized constant AddReference
+/Users/yujunk/Desktop/ar-student-schema/Rakefile:20:in `block in <top (required)>'
+
+Caused by:
+NameError: uninitialized constant AddReference
+/Users/yujunk/Desktop/ar-student-schema/Rakefile:20:in `block in <top (required)>'
+Tasks: TOP => db:migrate
+(See full trace by running task with --trace)
+JUNs-MacBook-Pro:ar-student-schema yujunk$ rake db:migrate
+"Harry Potter"
+21
+false
+false
+false
+false
+false
+false
+== 20180205154000 AddReference: migrating =====================================
+-- add_reference(:students, :teacher, {:type=>:integer, :foreign_key=>true})
+   -> 0.0017s
+== 20180205154000 AddReference: migrated (0.0022s) ============================
+
+JUNs-MacBook-Pro:ar-student-schema yujunk$ irb
+irb(main):001:0> load ./db/config.rb
+Traceback (most recent call last):
+        3: from /Users/yujunk/.rbenv/versions/2.5.0/bin/irb:11:in `<main>'
+        2: from (irb):1
+        1: from (irb):1:in `load'
+ArgumentError (wrong number of arguments (given 0, expected 1..2))
+irb(main):002:0> load './db/config.rb'
+"Harry Potter"
+21
+false
+false
+false
+false
+false
+false
+=> true
+irb(main):003:0> Student.all
+=> #<ActiveRecord::Relation [#<Student id: 1, created_at: "2018-02-02 07:21:28", updated_at: "2018-02-02 08:13:53", first_name: "Harry", last_name: "Potter", email: nil, phone_number: nil, birthday: 1997, age: 21, teacher_id: nil>, #<Student id: 2, created_at: "2018-02-02 07:22:08", updated_at: "2018-02-02 08:14:42", first_name: "Harry", last_name: "Potter2", email: nil, phone_number: nil, birthday: 1999, age: 22, teacher_id: nil>, #<Student id: 3, created_at: "2018-02-02 09:24:32", updated_at: "2018-02-02 09:24:32", first_name: "Luke", last_name: "Skywalker", email: "hello@address.com", phone_number: nil, birthday: 1999, age: nil, teacher_id: nil>, #<Student id: 4, created_at: "2018-02-02 09:31:50", updated_at: "2018-02-02 09:31:50", first_name: "Luke", last_name: "Skywalker", email: "hi@address.com", phone_number: nil, birthday: 1999, age: nil, teacher_id: nil>]>
+irb(main):004:0> student = Student.find(1)
+=> #<Student id: 1, created_at: "2018-02-02 07:21:28", updated_at: "2018-02-02 08:13:53", first_name: "Harry", last_name: "Potter", email: nil, phone_number: nil, birthday: 1997, age: 21, teacher_id: nil>
+irb(main):005:0> student.update(teacher_id: 2)
+=> false
+irb(main):006:0> student
+=> #<Student id: 1, created_at: "2018-02-02 07:21:28", updated_at: "2018-02-02 08:13:53", first_name: "Harry", last_name: "Potter", email: nil, phone_number: nil, birthday: 1997, age: 21, teacher_id: 2>
+irb(main):007:0> student.errors
+=> #<ActiveModel::Errors:0x00007fb5e9180460 @base=#<Student id: 1, created_at: "2018-02-02 07:21:28", updated_at: "2018-02-02 08:13:53", first_name: "Harry", last_name: "Potter", email: nil, phone_number: nil, birthday: 1997, age: 21, teacher_id: 2>, @messages={:email=>["can't be blank", "has already been taken"]}, @details={:email=>[{:error=>:blank}, {:error=>:taken, :value=>nil}]}>
+irb(main):008:0> student.update_attribute(teacher_id, 2)
+Traceback (most recent call last):
+        2: from /Users/yujunk/.rbenv/versions/2.5.0/bin/irb:11:in `<main>'
+        1: from (irb):8
+NameError (undefined local variable or method `teacher_id' for main:Object)
+irb(main):009:0> student.update_attribute(teacher_id: 2)
+Traceback (most recent call last):
+        3: from /Users/yujunk/.rbenv/versions/2.5.0/bin/irb:11:in `<main>'
+        2: from (irb):9
+        1: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.1.4/lib/active_record/persistence.rb:265:in `update_attribute'
+ArgumentError (wrong number of arguments (given 1, expected 2))
+irb(main):010:0> 
+irb(main):011:0> Student.first
+=> #<Student id: 1, created_at: "2018-02-02 07:21:28", updated_at: "2018-02-02 08:13:53", first_name: "Harry", last_name: "Potter", email: nil, phone_number: nil, birthday: 1997, age: 21, teacher_id: nil>
+irb(main):012:0> Student.first.update(email: "wassup@gmail.com", teacher_id: 2)
+=> true
+irb(main):013:0> Teacher.all
+=> #<ActiveRecord::Relation [#<Teacher id: 1, first_name: "Albus", last_name: "Dumbledore", email: "albus.dumbledore@gmail.com", phone_number: nil, birthday: nil, created_at: "2018-02-05 07:05:40", updated_at: "2018-02-05 07:05:40">, #<Teacher id: 2, first_name: "Flitwick", last_name: "Wah", email: "flitcwick.wah@gmail.com", phone_number: nil, birthday: nil, created_at: "2018-02-05 07:06:25", updated_at: "2018-02-05 07:06:25">, #<Teacher id: 3, first_name: "Flitwick", last_name: "Something", email: "flitcwick.something2@gmail.com", phone_number: nil, birthday: nil, created_at: "2018-02-05 07:06:37", updated_at: "2018-02-05 07:06:37">, #<Teacher id: 4, first_name: "Flitwick", last_name: "Hello", email: "flitcwick.hello3@gmail.com", phone_number: nil, birthday: nil, created_at: "2018-02-05 07:06:38", updated_at: "2018-02-05 07:06:38">, #<Teacher id: 5, first_name: "Flitwick", last_name: "Bee", email: "flitcwick.bee4@gmail.com", phone_number: nil, birthday: nil, created_at: "2018-02-05 07:06:39", updated_at: "2018-02-05 07:06:39">, #<Teacher id: 6, first_name: "Flitwick", last_name: "Apple", email: "flitcwick.apple5@gmail.com", phone_number: nil, birthday: nil, created_at: "2018-02-05 07:06:46", updated_at: "2018-02-05 07:06:46">]>
+irb(main):014:0> ^D
+JUNs-MacBook-Pro:ar-student-schema yujunk$ irb
+irb(main):001:0> load './db/config.rb'
+"Harry Potter"
+21
+false
+false
+false
+false
+false
+false
+=> true
+irb(main):002:0> Student.all
+=> #<ActiveRecord::Relation [#<Student id: 1, created_at: "2018-02-02 07:21:28", updated_at: "2018-02-05 07:54:18", first_name: "Harry", last_name: "Potter", email: "wassup@gmail.com", phone_number: nil, birthday: 1997, age: 21, teacher_id: 0>, #<Student id: 2, created_at: "2018-02-02 07:22:08", updated_at: "2018-02-02 08:14:42", first_name: "Harry", last_name: "Potter2", email: nil, phone_number: nil, birthday: 1999, age: 22, teacher_id: nil>, #<Student id: 3, created_at: "2018-02-02 09:24:32", updated_at: "2018-02-05 07:54:18", first_name: "Luke", last_name: "Skywalker", email: "hello@address.com", phone_number: nil, birthday: 1999, age: nil, teacher_id: 5>, #<Student id: 4, created_at: "2018-02-02 09:31:50", updated_at: "2018-02-05 07:54:18", first_name: "Luke", last_name: "Skywalker", email: "hi@address.com", phone_number: nil, birthday: 1999, age: nil, teacher_id: 4>]>
+irb(main):003:0> Student.first
+=> #<Student id: 1, created_at: "2018-02-02 07:21:28", updated_at: "2018-02-05 07:54:18", first_name: "Harry", last_name: "Potter", email: "wassup@gmail.com", phone_number: nil, birthday: 1997, age: 21, teacher_id: 0>
+irb(main):004:0> Student.first.teacher
+=> nil
+irb(main):005:0> ^D
+JUNs-MacBook-Pro:ar-student-schema yujunk$ irb
+irb(main):001:0> load './db/config.rb'
+"Harry Potter"
+21
+false
+false
+false
+false
+false
+false
+=> true
+irb(main):002:0> Student.all
+=> #<ActiveRecord::Relation [#<Student id: 1, created_at: "2018-02-02 07:21:28", updated_at: "2018-02-05 07:55:44", first_name: "Harry", last_name: "Potter", email: "wassup@gmail.com", phone_number: nil, birthday: 1997, age: 21, teacher_id: 4>, #<Student id: 2, created_at: "2018-02-02 07:22:08", updated_at: "2018-02-02 08:14:42", first_name: "Harry", last_name: "Potter2", email: nil, phone_number: nil, birthday: 1999, age: 22, teacher_id: nil>, #<Student id: 3, created_at: "2018-02-02 09:24:32", updated_at: "2018-02-05 07:55:44", first_name: "Luke", last_name: "Skywalker", email: "hello@address.com", phone_number: nil, birthday: 1999, age: nil, teacher_id: 0>, #<Student id: 4, created_at: "2018-02-02 09:31:50", updated_at: "2018-02-05 07:55:44", first_name: "Luke", last_name: "Skywalker", email: "hi@address.com", phone_number: nil, birthday: 1999, age: nil, teacher_id: 5>]>
+irb(main):003:0> find(teacher_id: 0)
+Traceback (most recent call last):
+        2: from /Users/yujunk/.rbenv/versions/2.5.0/bin/irb:11:in `<main>'
+        1: from (irb):3
+NoMethodError (undefined method `find' for main:Object)
+irb(main):004:0> Student.all.find(teacher_id: 0)
+Traceback (most recent call last):
+        6: from /Users/yujunk/.rbenv/versions/2.5.0/bin/irb:11:in `<main>'
+        5: from (irb):4
+        4: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.1.4/lib/active_record/relation/finder_methods.rb:66:in `find'
+        3: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.1.4/lib/active_record/relation/finder_methods.rb:450:in `find_with_ids'
+        2: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.1.4/lib/active_record/relation/finder_methods.rb:470:in `find_one'
+        1: from /Users/yujunk/.rbenv/versions/2.5.0/lib/ruby/gems/2.5.0/gems/activerecord-5.1.4/lib/active_record/relation/finder_methods.rb:343:in `raise_record_not_found_exception!'
+ActiveRecord::RecordNotFound (Couldn't find Student with 'id'={:teacher_id=>0})
+irb(main):005:0> Student.first
+=> #<Student id: 1, created_at: "2018-02-02 07:21:28", updated_at: "2018-02-05 07:55:44", first_name: "Harry", last_name: "Potter", email: "wassup@gmail.com", phone_number: nil, birthday: 1997, age: 21, teacher_id: 4>
+irb(main):006:0> Student.where(teacher_id: 0)
+=> #<ActiveRecord::Relation [#<Student id: 3, created_at: "2018-02-02 09:24:32", updated_at: "2018-02-05 07:55:44", first_name: "Luke", last_name: "Skywalker", email: "hello@address.com", phone_number: nil, birthday: 1999, age: nil, teacher_id: 0>]>
+irb(main):007:0> ^D
+JUNs-MacBook-Pro:ar-student-schema yujunk$ irb
+irb(main):001:0> load './db/config.rb'
+"Harry Potter"
+21
+false
+false
+false
+false
+false
+false
+=> true
+irb(main):002:0> Student.all
+=> #<ActiveRecord::Relation [#<Student id: 1, created_at: "2018-02-02 07:21:28", updated_at: "2018-02-05 07:59:59", first_name: "Harry", last_name: "Potter", email: "wassup@gmail.com", phone_number: nil, birthday: 1997, age: 21, teacher_id: 6>, #<Student id: 2, created_at: "2018-02-02 07:22:08", updated_at: "2018-02-02 08:14:42", first_name: "Harry", last_name: "Potter2", email: nil, phone_number: nil, birthday: 1999, age: 22, teacher_id: nil>, #<Student id: 3, created_at: "2018-02-02 09:24:32", updated_at: "2018-02-05 07:59:59", first_name: "Luke", last_name: "Skywalker", email: "hello@address.com", phone_number: nil, birthday: 1999, age: nil, teacher_id: 2>, #<Student id: 4, created_at: "2018-02-02 09:31:50", updated_at: "2018-02-05 07:59:59", first_name: "Luke", last_name: "Skywalker", email: "hi@address.com", phone_number: nil, birthday: 1999, age: nil, teacher_id: 2>]>
+irb(main):003:0> Student.where(teacher_id: 0)
+=> #<ActiveRecord::Relation []>
+irb(main):004:0> Student.first
+=> #<Student id: 1, created_at: "2018-02-02 07:21:28", updated_at: "2018-02-05 07:59:59", first_name: "Harry", last_name: "Potter", email: "wassup@gmail.com", phone_number: nil, birthday: 1997, age: 21, teacher_id: 6>
+irb(main):005:0> Student.first.teacher
+=> #<Teacher id: 6, first_name: "Flitwick", last_name: "Apple", email: "flitcwick.apple5@gmail.com", phone_number: nil, birthday: nil, created_at: "2018-02-05 07:06:46", updated_at: "2018-02-05 07:06:46">
+irb(main):006:0> Teacher.first
+=> #<Teacher id: 1, first_name: "Albus", last_name: "Dumbledore", email: "albus.dumbledore@gmail.com", phone_number: nil, birthday: nil, created_at: "2018-02-05 07:05:40", updated_at: "2018-02-05 07:05:40">
+irb(main):007:0> Teacher.first.students
+=> #<ActiveRecord::Associations::CollectionProxy []>
+irb(main):008:0> Teacher.second.students
+=> #<ActiveRecord::Associations::CollectionProxy [#<Student id: 3, created_at: "2018-02-02 09:24:32", updated_at: "2018-02-05 07:59:59", first_name: "Luke", last_name: "Skywalker", email: "hello@address.com", phone_number: nil, birthday: 1999, age: nil, teacher_id: 2>, #<Student id: 4, created_at: "2018-02-02 09:31:50", updated_at: "2018-02-05 07:59:59", first_name: "Luke", last_name: "Skywalker", email: "hi@address.com", phone_number: nil, birthday: 1999, age: nil, teacher_id: 2>]>
+irb(main):009:0> 
